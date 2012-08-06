@@ -1,0 +1,25 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("js"
+ (filename . "~/Development/js/")
+ (front-context-string . "backbone-tunes\n ")
+ (rear-context-string . "42  5 Maj 21:14 ")
+ (position . 237))
+("ucb_ruby_gems"
+ (filename . "~/Development/ucb_ruby_gems/")
+ (front-context-string . "ruby_coa\n  drwxr")
+ (rear-context-string . "72 21 Okt  2009 ")
+ (position . 248))
+("github_projects"
+ (filename . "~/Development/github_projects/")
+ (front-context-string . "SICPExerciseSolu")
+ (rear-context-string . "06  5 Nov  2011 ")
+ (position . 256))
+("ucb_ruby_apps"
+ (filename . "~/Development/ucb_ruby_apps/")
+ (front-context-string . "appnet_demo\n  dr")
+ (rear-context-string . "46 25 Feb  2011 ")
+ (position . 252))
+)

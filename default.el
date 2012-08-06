@@ -46,7 +46,7 @@
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/elpa/yasnippet-0.6.1/snippets")
 (setq yas/use-menu 1)
-;;(yas/load-directory "~/.emacs.d/vendor/snippets/yasnippets-rails")
+(yas/load-directory "~/.emacs.d/vendor/snippets/yasnippets-rails")
 (keyboard-translate ?\C-i ?\H-i)
 (global-set-key [?\H-i] 'yas/expand)
 
@@ -151,7 +151,16 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Rinari (http://wikemacs.org/wiki/Rinari)
+;;
+;; Installation:
+;; cd vendor/
+;; git clone git://github.com/eschulte/rinari.git
+;; cd rinari
+;; git submodule init
+;; git submodule update
+;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (add-to-list 'load-path "~/.emacs.d/vendor/rinari")
 (require 'rinari)
 
 

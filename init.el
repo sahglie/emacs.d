@@ -1,8 +1,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("elpa" . "http://tromey.com/elpa/") t)
+;; (add-to-list 'package-archives
+;;              '("elpa" . "http://tromey.com/elpa/") t)
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -44,11 +44,9 @@
     pymacs
     python-mode
     rinari
-    rspec-mode
-    ruby-block
-    ruby-compilation
-    ruby-electric
     ruby-mode
+    ruby-compilation
+    rspec-mode
     rvm
     sass-mode
     scpaste
