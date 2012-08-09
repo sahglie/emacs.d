@@ -8,10 +8,45 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-(defvar my-packages 
-  '(
-    auto-complete
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Packages to be installed on startup (if they are missing)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defvar starter-kit-core-packages
+  '(starter-kit
+    starter-kit-bindings
+    starter-kit-eshell
+    starter-kit-js
+    starter-kit-lisp
+    starter-kit-ruby))
+
+(defvar python-packages
+  '(pymacs
+    python-mode
+    ipython))
+
+(defvar ruby-packages
+  '(haml-mode
+    htmlize
+    inf-ruby
+    less
+    less-css-mode
+    rinari
+    rspec-mode
+    ruby-compilation
+    ruby-mode
+    rvm
+    sass-mode
+    yaml-mode
+    yari
+    yasnippet
+    yasnippet-bundle))
+
+(defvar misc-packages 
+  '(auto-complete
     auto-dictionary
+    anything
+    anythin-complete
     browse-kill-ring
     dired+
     dsvn
@@ -24,47 +59,29 @@
     flymake-sass
     fuzzy
     fuzzy-match
-    haml-mode
     htmlize
     httpcode
     idle-highlight-mode
     ido-ubiquitous
-    inf-ruby
     inflections
-    ipython
     jump
-    less
-    less-css-mode
     magit
     mode-compile
     openwith
     paredit
     popup
     project
-    pymacs
-    python-mode
-    rinari
-    ruby-mode
-    ruby-compilation
-    rspec-mode
-    rvm
-    sass-mode
     scpaste
     scratch
     shell-here
     smex
-    solarized-theme
-    starter-kit
-    starter-kit-bindings
-    starter-kit-eshell
-    starter-kit-js
-    starter-kit-lisp
-    starter-kit-ruby
-    yaml-mode
-    yasnippet
-    yasnippet-bundle
-    )
- "A list of packages to ensure are installed at launch.")
+    solarized-theme))
+
+(defvar my-packages `())
+(append my-packages starter-kit-core-packages)
+(append my-packages ruby-packages)
+(append my-packages python-packages)
+(append my-packages misc-packages)
 
 (dolist (p my-packages)
  (when (not (package-installed-p p))
