@@ -1,5 +1,6 @@
 (load-theme 'solarized-dark t)
 (blink-cursor-mode t)
+(menu-bar-mode)
 ;;(set-face-attribute 'default nil :height 108)
 
 
@@ -182,4 +183,10 @@
 ;;(define-key ac-menu-map "\C-p" 'ac-previous)
 (define-key ac-completing-map "\C-n" 'ac-next)
 (define-key ac-completing-map "\C-p" 'ac-previous)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; anything
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'anything-config)
 

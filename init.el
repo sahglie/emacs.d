@@ -46,7 +46,8 @@
   '(auto-complete
     auto-dictionary
     anything
-    anythin-complete
+    anything-complete
+    anything-config
     browse-kill-ring
     dired+
     dsvn
