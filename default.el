@@ -47,7 +47,7 @@
 (yas/load-directory "~/.emacs.d/elpa/yasnippet-0.6.1/snippets")
 (setq yas/use-menu 1)
 (yas/load-directory "~/.emacs.d/vendor/snippets/yasnippets-rails")
-(keyboard-translate ?\C-i ?\H-i)
+;;(keyboard-translate ?\C-i ?\H-i)
 (global-set-key [?\H-i] 'yas/expand)
 
 
@@ -160,7 +160,6 @@
 ;; git submodule update
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; (add-to-list 'load-path "~/.emacs.d/vendor/rinari")
 (require 'rinari)
 
 
