@@ -1,7 +1,9 @@
-(load-theme 'solarized-dark t)
+(load-theme 'blackboard t)
 (blink-cursor-mode t)
 (menu-bar-mode)
-;;(set-face-attribute 'default nil :height 108)
+(set-face-attribute 'default nil :height 108)
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/color-themes")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
