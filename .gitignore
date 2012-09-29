@@ -5,4 +5,5 @@
 /places
 /url
 *elc
-/elpa/archives/*
+elpa/archives/*
+
