@@ -14,9 +14,10 @@
 (define-key glie-keys-minor-mode-map (kbd "M-n")   'scroll-up)
 (define-key glie-keys-minor-mode-map (kbd "M-s")   'save-buffer)
 (define-key glie-keys-minor-mode-map (kbd "C-S-l") 'recenter)
-;(define-key glie-keys-minor-mode-map (kbd "M-m") 'recenter)
+(define-key glie-keys-minor-mode-map (kbd "M-m") 'recenter)
 (define-key glie-keys-minor-mode-map (kbd "M-]")   'end-of-buffer)
 (define-key glie-keys-minor-mode-map (kbd "M-[")   'beginning-of-buffer)
+
 ;; for some reason these bindings causes errors
 ; (define-key glie-keys-minor-mode-map (kbd "C-]")   'end-of-defun)
 ; (define-key glie-keys-minor-mode-map (kbd "C-[")   'beginning-of-defun)
@@ -33,13 +34,13 @@
 (define-key glie-keys-minor-mode-map (kbd "C-2") 'split-window-vertically)
 (define-key glie-keys-minor-mode-map (kbd "C-3") 'split-window-horizontally)
 
-(define-key glie-keys-minor-mode-map (kbd "C-o") 'other-window)
-(define-key glie-keys-minor-mode-map (kbd "M-o") 'other-window)
+;; (define-key glie-keys-minor-mode-map (kbd "C-o") 'other-window)
+;; (define-key glie-keys-minor-mode-map (kbd "M-o") 'other-window)
 
-;; (define-key glie-keys-minor-mode-map (kbd "C-S-l") 'windmove-right)
-;; (define-key glie-keys-minor-mode-map (kbd "C-S-j") 'windmove-left)
-;; (define-key glie-keys-minor-mode-map (kbd "C-S-p") 'windmove-up)
-;; (define-key glie-keys-minor-mode-map (kbd "C-S-n") 'windmove-down)
+(define-key glie-keys-minor-mode-map (kbd "C-S-l") 'windmove-right)
+(define-key glie-keys-minor-mode-map (kbd "C-S-j") 'windmove-left)
+(define-key glie-keys-minor-mode-map (kbd "C-S-p") 'windmove-up)
+(define-key glie-keys-minor-mode-map (kbd "C-S-n") 'windmove-down)
 
 ;; General aliases
 (define-key glie-keys-minor-mode-map (kbd "C-x g") 'goto-line)

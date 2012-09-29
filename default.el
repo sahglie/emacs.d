@@ -1,10 +1,9 @@
+(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/color-themes")
+
 (load-theme 'blackboard t)
 (blink-cursor-mode t)
 (menu-bar-mode)
-(set-face-attribute 'default nil :height 108)
-
-(add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/color-themes")
-
+(set-face-attribute 'default nil :height 110)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; For IRC
@@ -107,7 +106,6 @@
 ; (require 'pymacs)
 ; (pymacs-load "ropemacs" "rope-")
 ; (setq ropemacs-enable-autoimport t)
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -76,6 +76,7 @@
  `(text-cursor ((t (:background "yellow" :foreground "black"))))
  `(toolbar ((t (nil))))
  `(underline ((nil (:underline nil))))
+ `(cursor ((t (:inverse-video t :foreground "#002b36" :background "yellow"))))
  `(zmacs-region ((t (:background "snow" :foreground "ble")))))
 
 (provide-theme 'blackboard)
