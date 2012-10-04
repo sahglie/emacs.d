@@ -14,28 +14,22 @@
 (define-key glie-keys-minor-mode-map (kbd "M-n")   'scroll-up)
 (define-key glie-keys-minor-mode-map (kbd "M-s")   'save-buffer)
 (define-key glie-keys-minor-mode-map (kbd "C-S-l") 'recenter)
-(define-key glie-keys-minor-mode-map (kbd "M-m") 'recenter)
+(define-key glie-keys-minor-mode-map (kbd "M-m")   'recenter)
 (define-key glie-keys-minor-mode-map (kbd "M-]")   'end-of-buffer)
 (define-key glie-keys-minor-mode-map (kbd "M-[")   'beginning-of-buffer)
+(define-key glie-keys-minor-mode-map (kbd "C-M-j")   'backward-sexp)
+(define-key glie-keys-minor-mode-map (kbd "C-M-l")   'forward-sexp)
 
 ;; for some reason these bindings causes errors
-; (define-key glie-keys-minor-mode-map (kbd "C-]")   'end-of-defun)
-; (define-key glie-keys-minor-mode-map (kbd "C-[")   'beginning-of-defun)
-
+;(define-key glie-keys-minor-mode-map (kbd "C-]")   'end-of-defun)
+;(define-key glie-keys-minor-mode-map (kbd "C-[")   'beginning-of-defun)
 
 
 ;; WINDOW CONTROL
-(define-key glie-keys-minor-mode-map (kbd "M-0") 'delete-window)
-(define-key glie-keys-minor-mode-map (kbd "M-1") 'delete-other-windows)
-(define-key glie-keys-minor-mode-map (kbd "M-2") 'split-window-vertically)
-(define-key glie-keys-minor-mode-map (kbd "M-3") 'split-window-horizontally)
-(define-key glie-keys-minor-mode-map (kbd "C-0") 'delete-other-windows)
-(define-key glie-keys-minor-mode-map (kbd "C-1") 'delete-window)
-(define-key glie-keys-minor-mode-map (kbd "C-2") 'split-window-vertically)
-(define-key glie-keys-minor-mode-map (kbd "C-3") 'split-window-horizontally)
-
-;; (define-key glie-keys-minor-mode-map (kbd "C-o") 'other-window)
-;; (define-key glie-keys-minor-mode-map (kbd "M-o") 'other-window)
+(define-key glie-keys-minor-mode-map (kbd "M-1") 'delete-window)
+(define-key glie-keys-minor-mode-map (kbd "M-2") 'split-window-horizontally)
+(define-key glie-keys-minor-mode-map (kbd "M-3") 'split-window-vertically)
+(define-key glie-keys-minor-mode-map (kbd "C-o") 'other-window)
 
 (define-key glie-keys-minor-mode-map (kbd "C-S-l") 'windmove-right)
 (define-key glie-keys-minor-mode-map (kbd "C-S-j") 'windmove-left)
@@ -46,6 +40,7 @@
 (define-key glie-keys-minor-mode-map (kbd "C-x g") 'goto-line)
 (define-key glie-keys-minor-mode-map (kbd "C-x ttl") 'toggle-truncate-lines)
 (define-key glie-keys-minor-mode-map (kbd "M-5") 'query-replace-regexp)
+(define-key glie-keys-minor-mode-map (kbd "C-S-w") 'er/expand-region)
 
 ;; Navigate the mark ring
 (define-key glie-keys-minor-mode-map (kbd "C-c j") 'marker-visit-prev)
