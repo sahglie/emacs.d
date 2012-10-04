@@ -17,8 +17,16 @@
 (define-key glie-keys-minor-mode-map (kbd "M-m")   'recenter)
 (define-key glie-keys-minor-mode-map (kbd "M-]")   'end-of-buffer)
 (define-key glie-keys-minor-mode-map (kbd "M-[")   'beginning-of-buffer)
-(define-key glie-keys-minor-mode-map (kbd "C-M-j")   'backward-sexp)
-(define-key glie-keys-minor-mode-map (kbd "C-M-l")   'forward-sexp)
+(define-key glie-keys-minor-mode-map (kbd "C-M-j") 'backward-sexp)
+(define-key glie-keys-minor-mode-map (kbd "C-M-l") 'forward-sexp)
+
+(define-key glie-keys-minor-mode-map (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(define-key glie-keys-minor-mode-map (kbd "C-S-c C-e") 'mc/edit-ends-of-lines)
+(define-key glie-keys-minor-mode-map (kbd "C-S-c C-a") 'mc/edit-beginnings-of-lines)
+(define-key glie-keys-minor-mode-map (kbd "C->") 'mc/mark-next-like-this)
+(define-key glie-keys-minor-mode-map (kbd "C-<") 'mc/mark-previous-like-this)
+(define-key glie-keys-minor-mode-map (kbd "C-c C-<") 'mc/mark-all-like-this)
+(define-key glie-keys-minor-mode-map (kbd "H-SPC") 'set-rectangular-region-anchor)
 
 ;; for some reason these bindings causes errors
 ;(define-key glie-keys-minor-mode-map (kbd "C-]")   'end-of-defun)

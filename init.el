@@ -67,6 +67,7 @@
     jump
     magit
     mode-compile
+    multiple-cursors
     openwith
     paredit
     popup

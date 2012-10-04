@@ -7,3 +7,5 @@
 *elc
 /elpa/archives/*
 
+/eshell/history
+/eshell/lastdir
