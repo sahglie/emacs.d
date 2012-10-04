@@ -13,7 +13,7 @@
 (define-key glie-keys-minor-mode-map (kbd "M-p")   'scroll-down)
 (define-key glie-keys-minor-mode-map (kbd "M-n")   'scroll-up)
 (define-key glie-keys-minor-mode-map (kbd "M-s")   'save-buffer)
-(define-key glie-keys-minor-mode-map (kbd "C-S-l") 'recenter)
+;(define-key glie-keys-minor-mode-map (kbd "C-S-l") 'recenter)
 (define-key glie-keys-minor-mode-map (kbd "M-m")   'recenter)
 (define-key glie-keys-minor-mode-map (kbd "M-]")   'end-of-buffer)
 (define-key glie-keys-minor-mode-map (kbd "M-[")   'beginning-of-buffer)
@@ -28,7 +28,7 @@
 (define-key glie-keys-minor-mode-map (kbd "C-c C-<") 'mc/mark-all-like-this)
 (define-key glie-keys-minor-mode-map (kbd "H-SPC") 'set-rectangular-region-anchor)
 
-;; for some reason these bindings causes errors
+;; For some reason these bindings causes errors
 ;(define-key glie-keys-minor-mode-map (kbd "C-]")   'end-of-defun)
 ;(define-key glie-keys-minor-mode-map (kbd "C-[")   'beginning-of-defun)
 
@@ -98,8 +98,10 @@
 
 ;; (global-set-key (kbd "C-c si") 'snippet-insert)
 
-;; Magit
+;; Random Aliases
 (defalias 'gs 'magit-status)
+(defalias 'dw 'downcase-word)
+(defalias 'uw 'upcase-word)
 
 (add-hook 'minibuffer-setup-hook 'glie-minibuffer-setup-hook)
 (add-hook 'text-mode-hook 'turn-off-auto-fill)
