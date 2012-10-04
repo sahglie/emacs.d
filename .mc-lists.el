@@ -3,10 +3,12 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        paredit-backward-kill-word
-        paredit-forward-kill-word
+        isearch-forward-regexp
+        isearch-repeat-forward
+        smex
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        isearch-printing-char
         ))
