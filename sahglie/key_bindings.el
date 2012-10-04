@@ -67,6 +67,7 @@
 (define-key glie-keys-minor-mode-map (kbd "C-x ln") 'linum-mode)
 (define-key glie-keys-minor-mode-map (kbd "C-x ws") 'global-whitespace-newline-mode)
 (define-key glie-keys-minor-mode-map (kbd "C-x C-M-f") 'rinari-find-file-in-project)
+(define-key glie-keys-minor-mode-map (kbd "C-x f") 'ffip)
 
 ;; Ropemacs
 (define-key glie-keys-minor-mode-map (kbd "C-c g") 'rope-goto-definition)
@@ -91,11 +92,6 @@
 ;; Only applies to emacs 23
 (setq mac-command-modifier 'meta)
 
-
-;; comint keys
-; (require 'comint)
-; (define-key comint-mode-map (kbd "M-n") 'comint-next-matching-input-from-input)
-; (define-key comint-mode-map (kbd "M-p") 'comint-previous-matching-input-from-input)
 
 ;; Case Sensitive CTAGS searching
 (set-default 'case-fold-search nil)
