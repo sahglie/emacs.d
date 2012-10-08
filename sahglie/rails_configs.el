@@ -1,12 +1,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Rinari 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(add-to-list 'load-path "~/.emacs.d/vendor/rhtml")
-;(require 'rhtml-mode)
-;(add-hook 'rhtml-mode-hook (lambda () (rinari-launch)))
-; (require 'rinari)
-; (define-key rinari-minor-mode-map (kbd "C-x rws") 'rinari-web-server)
-; (define-key rinari-minor-mode-map (kbd "C-S-f") 'rinari-find-file-in-project)
+(add-to-list 'load-path "~/.emacs.d/vendor/rhtml")
+(require 'rhtml-mode)
+(add-hook 'rhtml-mode-hook (lambda () (rinari-launch)))
+
+(add-hook 'rspec-mode-hook '(lambda ()
+                              (setq rspec-use-rake-flag nil)))
+
+
 
 ;; Shortcuts for opening dired mode to common directories in a rails app
 ;; (defun rinari-dired-to (name)
@@ -43,13 +45,3 @@
 ;; (define-key glie-keys-minor-mode-map (kbd "C-c ; j y") 'rinari-dired-to-stylesheets)
 ;; (define-key glie-keys-minor-mode-map (kbd "C-c ; j j") 'rinari-dired-to-javascripts)
 
-
-;; (add-hook 'rinari-minor-mode-hook
-;;           '(lambda ()
-;;              (unless (or (equal 'dired-mode major-mode)
-;;                          (equal 'shell-mode major-mode))
-;;                (whitespace-mode "whitespace"))
-;;              (setq whitespace-line-column 79)
-;;              (setq whitespace-style
-;;                    ;'(tabs newline space-mark tab-mark newline-mark lines)
-;;                    '(newline lines))))

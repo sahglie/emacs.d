@@ -65,11 +65,6 @@
 
 May be set using .dir-locals.el. Checks each entry if set to a list.")
 
-(defvar ffip-completing-read-function 'completing-read
-  "The function that should be used to filter project files during a find.
-
-May be set using .dir-locals.el.")
-
 (defvar ffip-patterns
   '("*.html" "*.org" "*.txt" "*.md" "*.el" "*.clj" "*.py" "*.rb" "*.js" "*.pl"
     "*.sh" "*.erl" "*.hs" "*.ml" "*.erb")
@@ -154,23 +149,8 @@ setting the variable `ffip-project-root'."
   (interactive)
   (let* ((project-files (ffip-project-files))
          (files (mapcar 'car project-files))
-         (file (funcall
-                ffip-completing-read-function "Find file in project: " files)))
+         (file (completing-read "Find file in project: " files)))
     (find-file (cdr (assoc file project-files)))))
-
-;; (defun find-file-in-project ()
-;;   "Prompt with a completing list of all files in the project to find one.
-
-;; The project's scope is defined as the first directory containing
-;; an `.emacs-project' file.  You can override this by locally
-;; setting the variable `ffip-project-root'."
-;;   (interactive)
-;;   (let* ((project-files (ffip-project-files))
-;;          (files (mapcar 'car project-files))
-;;          (file (if (and (boundp 'ido-mode) ido-mode)
-;;                    (ido-completing-read "Find file in project: " files)
-;;                  (completing-read "Find file in project: " files))))
-;;     (find-file (cdr (assoc file project-files)))))
 
 ;;;###autoload
 (defalias 'ffip 'find-file-in-project)
@@ -179,7 +159,6 @@ setting the variable `ffip-project-root'."
 ;;;###autoload
 (progn
   (put 'ffip-patterns 'safe-local-variable 'listp)
-  (put 'ffip-completing-read-function 'safe-local-variable 'functionp)
   (put 'ffip-find-options 'safe-local-variable 'stringp)
   (put 'ffip-project-file 'safe-local-variable 'stringp)
   (put 'ffip-project-root 'safe-local-variable 'stringp)

@@ -54,10 +54,6 @@
 (define-key glie-keys-minor-mode-map (kbd "C-c j") 'marker-visit-prev)
 (define-key glie-keys-minor-mode-map (kbd "C-c l") 'marker-visit-next)
 
-;; This breaks M-x (leaving this here as reminder to never try to define
-;; custome bindings this way:
-;; (define-key glie-keys-minor-mode-map (kbd "M-x rb") 'rename-buffer)
-
 ;; MODE SHORTCUTS
 (define-key glie-keys-minor-mode-map (kbd "C-x cua") 'cua-mode)
 (define-key glie-keys-minor-mode-map (kbd "C-x ; k") 'compile)
@@ -66,7 +62,7 @@
 (define-key glie-keys-minor-mode-map (kbd "C-x sh") 'shell-here)
 (define-key glie-keys-minor-mode-map (kbd "C-x ln") 'linum-mode)
 (define-key glie-keys-minor-mode-map (kbd "C-x ws") 'global-whitespace-newline-mode)
-(define-key glie-keys-minor-mode-map (kbd "C-x C-M-f") 'rinari-find-file-in-project)
+(define-key glie-keys-minor-mode-map (kbd "C-S-f") 'ffip)
 (define-key glie-keys-minor-mode-map (kbd "C-x f") 'ffip)
 
 ;; Ropemacs
@@ -102,6 +98,9 @@
 (defalias 'gs 'magit-status)
 (defalias 'dw 'downcase-word)
 (defalias 'uw 'upcase-word)
+(defalias 'rb 'rename-buffer)
+(defalias 'lm 'linum-mode)
+(defalias 'bi 'bundle-install)
 
 (add-hook 'minibuffer-setup-hook 'glie-minibuffer-setup-hook)
 (add-hook 'text-mode-hook 'turn-off-auto-fill)

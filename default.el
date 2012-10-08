@@ -17,7 +17,10 @@
 
     (erc-track-switch-buffer 1) ;; yes: switch to last active
     (when (y-or-n-p "Start ERC? ") ;; no: maybe start ERC
-      (erc :server "irc.freenode.net" :port 6667 :sahglie "foo" :full-name "Steven Hansen"))))
+      (erc :server "irc.freenode.net"
+           :port 6667
+           :sahglie "foo"
+           :full-name "Steven Hansen"))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -67,8 +70,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; DSVN: SVN for Emacs (more effcient than PSVN)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(autoload 'svn-status "dsvn" "Run `svn status'." t)
-(autoload 'svn-update "dsvn" "Run `svn update'." t)
+;; (autoload 'svn-status "dsvn" "Run `svn status'." t)
+;; (autoload 'svn-update "dsvn" "Run `svn update'." t)
+(load-file "~/.emacs.d/vendor/psvn/psvn.el")
 (require 'vc-svn)
 
 
@@ -95,7 +99,6 @@
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 (setq py-python-command-args '("--colors=linux"))
 (require 'ipython)
-
 
 ; (setenv "PYMACS_PYTHON" "~/.pythonbrew/pythons/Python-2.7.2/bin/python")
 ; (autoload 'pymacs-apply "pymacs")
@@ -126,8 +129,8 @@
 ;;
 ;; NOTE: on osx must install texlive (satisfies TeX requirement)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(add-to-list 'load-path "/usr/local/share/emacs/site-lisp")
-;(require 'rdebug)
+(add-to-list 'load-path "~/.emacs.d/vendor/rdebug")
+(require 'rdebug)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -151,24 +154,15 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Rinari (http://wikemacs.org/wiki/Rinari)
-;;
-;; Installation:
-;; cd vendor/
-;; git clone git://github.com/eschulte/rinari.git
-;; cd rinari
-;; git submodule init
-;; git submodule update
-;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'rinari)
-(define-key rinari-minor-mode-map (kbd "C-x rws") 'rinari-web-server)
-(define-key rinari-minor-mode-map (kbd "C-S-f") 'rinari-find-file-in-project)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Rspec (http://www.emacswiki.org/RspecMode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'rspec-mode)
+(setq rspec-use-rake-flag 'f)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -197,3 +191,9 @@
 ; Multiple-cursors (https://github.com/magnars/multiple-cursors.el)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'multiple-cursors)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Bundler w/rails
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'bundler)

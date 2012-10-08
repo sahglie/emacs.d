@@ -511,6 +511,14 @@ as the value of the symbol, and the hook as the function definition."
                          '(rspec "\\([0-9A-Za-z_./\:-]+\\.rb\\):\\([0-9]+\\)" 1 2))
             (add-to-list 'compilation-error-regexp-alist 'rspec)))
 
+;; (condition-case nil
+;;     (progn
+;;       (require 'ansi-color)
+;;       (defun rspec-colorize-compilation-buffer ()
+;;         (ansi-color-apply-on-region (point-min) (point-max)))
+;;       (add-hook 'compilation-filter-hook 'rspec-colorize-compilation-buffer))
+;;     (error nil))
+
 (condition-case nil
     (progn
       (require 'ansi-color)
