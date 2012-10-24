@@ -60,10 +60,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (load-file "~/.emacs.d/vendor/traverselisp.el")
 (setq traverse-use-avfs t)
-(global-set-key (kbd "<f12> f") 'traverse-deep-rfind)
-(global-set-key (kbd "<f12> u") 'traverse-build-tags-in-project)
-(global-set-key (kbd "C-c t") 'traverse-dired-search-regexp-in-anything-at-point)
-(global-set-key (kbd "C-c C-z") 'traverse-dired-browse-archive)
+;; (global-set-key (kbd "<f12> u") 'traverse-build-tags-in-project)
+;; (global-set-key (kbd "C-c t") 'traverse-dired-search-regexp-in-anything-at-point)
+;; (global-set-key (kbd "C-c C-z") 'traverse-dired-browse-archive)
 (add-to-list 'traverse-ignore-files ".ledger-cache")
 
 
@@ -132,6 +131,13 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/rdebug")
 (require 'rdebug)
 
+;; (autoload 'rubydb "rubydb3x" "Ruby debugger" t)
+;; (add-hook 'ruby-mode-hook 'turn-on-font-lock)
+;; (autoload 'rdebug "rdebug" "Ruby debugging support." t)
+(global-set-key [f9] 'gud-step)
+(global-set-key [f10] 'gud-next)
+(global-set-key [f11] 'gud-cont)
+(global-set-key "\C-c\C-d" 'rdebug)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; browse-kill-ring 
@@ -150,7 +156,7 @@
 ;; shell-here
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'shell-here)
-
+(setq shell-here-open-buffer-function 'switch-to-buffer)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Rinari (http://wikemacs.org/wiki/Rinari)
@@ -162,7 +168,6 @@
 ;; Rspec (http://www.emacswiki.org/RspecMode)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'rspec-mode)
-(setq rspec-use-rake-flag 'f)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -184,6 +189,14 @@
 ; helm
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'helm-config)
+
+(defun yari-helm (&optional rehash)
+  (interactive (list current-prefix-arg))
+  (when current-prefix-arg (yari-ruby-obarray rehash))
+  (helm 'yari-anything-source-ri-pages (yari-symbol-at-point)))
+
+(define-key 'help-command "R" 'yari-helm)
+
 (helm-mode 1)
 
 
@@ -197,3 +210,5 @@
 ; Bundler w/rails
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'bundler)
+
+

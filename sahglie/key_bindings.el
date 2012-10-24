@@ -63,7 +63,9 @@
 (define-key glie-keys-minor-mode-map (kbd "C-x ln") 'linum-mode)
 (define-key glie-keys-minor-mode-map (kbd "C-x ws") 'global-whitespace-newline-mode)
 (define-key glie-keys-minor-mode-map (kbd "C-S-f") 'ffip)
-(define-key glie-keys-minor-mode-map (kbd "C-x f") 'ffip)
+(define-key glie-keys-minor-mode-map (kbd "M-f") 'traverse-deep-rfind)
+(define-key glie-keys-minor-mode-map (kbd "C-x b") 'ido-switch-buffer)
+(define-key glie-keys-minor-mode-map (kbd "C-c ,s") 'rspec-verify-single)
 
 ;; Ropemacs
 (define-key glie-keys-minor-mode-map (kbd "C-c g") 'rope-goto-definition)

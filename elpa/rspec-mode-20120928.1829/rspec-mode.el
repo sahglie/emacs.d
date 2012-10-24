@@ -430,14 +430,22 @@
   "Runs spec on a file with the specified options"
   (rspec-compile (rspec-runner-target spec-file) opts))
 
+;; (defun rspec-compile (a-file-or-dir &optional opts)
+;;   "Runs a compile for the specified file or diretory with the specified opts"
+;;   (let ((map (make-sparse-keymap)))
+;;     (define-key map (kbd "r") (eval `(lambda () (interactive)
+;;                                        (rspec-from-direcory ,default-directory
+;;                                                             (rspec-compile ,a-file-or-dir (quote ,opts))))))
+;;     (global-set-key rspec-key-command-prefix map))
+
+;;   (if rspec-use-rvm
+;;       (rvm-activate-corresponding-ruby))
+;;   (rspec-from-project-root
+;;    (compile (mapconcat 'identity `(,(rspec-runner) ,a-file-or-dir ,(rspec-runner-options opts)) " ")))
+;;   (rspec-end-of-buffer-target-window rspec-compilation-buffer-name))
+
 (defun rspec-compile (a-file-or-dir &optional opts)
   "Runs a compile for the specified file or diretory with the specified opts"
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "r") (eval `(lambda () (interactive)
-                                       (rspec-from-direcory ,default-directory
-                                                            (rspec-compile ,a-file-or-dir (quote ,opts))))))
-    (global-set-key rspec-key-command-prefix map))
-
   (if rspec-use-rvm
       (rvm-activate-corresponding-ruby))
   (rspec-from-project-root
@@ -511,19 +519,11 @@ as the value of the symbol, and the hook as the function definition."
                          '(rspec "\\([0-9A-Za-z_./\:-]+\\.rb\\):\\([0-9]+\\)" 1 2))
             (add-to-list 'compilation-error-regexp-alist 'rspec)))
 
-;; (condition-case nil
-;;     (progn
-;;       (require 'ansi-color)
-;;       (defun rspec-colorize-compilation-buffer ()
-;;         (ansi-color-apply-on-region (point-min) (point-max)))
-;;       (add-hook 'compilation-filter-hook 'rspec-colorize-compilation-buffer))
-;;     (error nil))
-
 (condition-case nil
     (progn
       (require 'ansi-color)
       (defun rspec-colorize-compilation-buffer ()
-        (toggle-read-only)
+        (toggle-read-only)              
         (ansi-color-apply-on-region (point-min) (point-max))
         (toggle-read-only))
       (add-hook 'compilation-filter-hook 'rspec-colorize-compilation-buffer))

@@ -29,6 +29,10 @@
 (eval-when-compile
   (require 'cl))
 
+(defvar shell-here-open-buffer-function 'switch-to-buffer
+  "Function called to determine which window to open shell buffer in.")
+
+
 (defun shell-here-walk-up (base steps)
   (if (= steps 0) base
     (shell-here-walk-up (shell-here-stripslash
@@ -82,7 +86,7 @@ Project root is determined with `ffip-project-root', if available."
          (base-name
           (format "*shell%s*"
                   (if root (format " %s" (file-name-nondirectory root)) "")))
-         (buf (pop-to-buffer
+         (buf (funcall shell-here-open-buffer-function
                (let ((default-directory (format "%s/" target)))
                  (cond
                   (new (generate-new-buffer base-name))
