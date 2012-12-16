@@ -84,6 +84,8 @@
 ; Need to refactor following bindings as they are not part of glie keys mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(setq mac-command-modifier 'meta)
+
 ;; Case Sensitive CTAGS searching
 (set-default 'case-fold-search nil)
 
