@@ -12,8 +12,6 @@
 (define-key glie-keys-minor-mode-map (kbd "M-l")   'forward-word)
 (define-key glie-keys-minor-mode-map (kbd "M-p")   'scroll-down)
 (define-key glie-keys-minor-mode-map (kbd "M-n")   'scroll-up)
-(define-key glie-keys-minor-mode-map (kbd "M-s")   'save-buffer)
-;(define-key glie-keys-minor-mode-map (kbd "C-S-l") 'recenter)
 (define-key glie-keys-minor-mode-map (kbd "M-m")   'recenter)
 (define-key glie-keys-minor-mode-map (kbd "M-]")   'end-of-buffer)
 (define-key glie-keys-minor-mode-map (kbd "M-[")   'beginning-of-buffer)
@@ -46,7 +44,6 @@
 
 ;; General aliases
 (define-key glie-keys-minor-mode-map (kbd "C-x g") 'goto-line)
-(define-key glie-keys-minor-mode-map (kbd "C-x ttl") 'toggle-truncate-lines)
 (define-key glie-keys-minor-mode-map (kbd "M-5") 'query-replace-regexp)
 (define-key glie-keys-minor-mode-map (kbd "C-S-w") 'er/expand-region)
 
@@ -87,10 +84,6 @@
 ; Need to refactor following bindings as they are not part of glie keys mode
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Only applies to emacs 23
-(setq mac-command-modifier 'meta)
-
-
 ;; Case Sensitive CTAGS searching
 (set-default 'case-fold-search nil)
 
@@ -103,6 +96,8 @@
 (defalias 'rb 'rename-buffer)
 (defalias 'lm 'linum-mode)
 (defalias 'bi 'bundle-install)
+(defalias 'ttl 'toggle-truncate-lines)
+(defalias 'tm 'menu-bar-mode)
 
 (add-hook 'minibuffer-setup-hook 'glie-minibuffer-setup-hook)
 (add-hook 'text-mode-hook 'turn-off-auto-fill)
