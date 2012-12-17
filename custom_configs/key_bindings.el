@@ -85,6 +85,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (setq mac-command-modifier 'meta)
+(setq x-select-enable-clipboard t)
 
 ;; Case Sensitive CTAGS searching
 (set-default 'case-fold-search nil)
