@@ -32,9 +32,9 @@
 
 
 ;; WINDOW CONTROL
-(define-key glie-keys-minor-mode-map (kbd "M-1") 'delete-window)
-(define-key glie-keys-minor-mode-map (kbd "M-2") 'split-window-horizontally)
-(define-key glie-keys-minor-mode-map (kbd "M-3") 'split-window-vertically)
+(define-key glie-keys-minor-mode-map (kbd "C-1") 'delete-window)
+(define-key glie-keys-minor-mode-map (kbd "C-2") 'split-window-horizontally)
+(define-key glie-keys-minor-mode-map (kbd "C-3") 'split-window-vertically)
 (define-key glie-keys-minor-mode-map (kbd "C-o") 'other-window)
 
 (define-key glie-keys-minor-mode-map (kbd "C-S-l") 'windmove-right)
