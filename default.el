@@ -40,7 +40,7 @@
 ;; (add-to-list 'load-path "/usr/local/lib/stk/site-scheme")
 ;; (add-to-list 'load-path "/usr/local/lib/stk/slib")
 ;; (require 'stkdb)
-(setq scheme-program-name "stk-simply")
+;; (setq scheme-program-name "stk-simply")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -48,7 +48,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'yasnippet)
 (yas/initialize)
-(yas/load-directory "~/.emacs.d/elpa/yasnippet-0.6.1/snippets")
+(yas/load-directory "~/.emacs.d/elpa/yasnippet-20131031.628/snippets")
 (setq yas/use-menu 1)
 (yas/load-directory "~/.emacs.d/vendor/snippets/yasnippets-rails")
 ;;(keyboard-translate ?\C-i ?\H-i)
@@ -92,8 +92,8 @@
 (require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (autoload 'python-mode "python-mode" "Python Mode." t)
-(setq ipython-command "~/.pythonbrew/pythons/Python-3.2.3/bin/ipython3")
-(setq py-python-command "~/.pythonbrew/pythons/Python-3.2.3/bin/ipython3")
+;;(setq ipython-command "~/.pythonbrew/pythons/Python-3.2.3/bin/ipython3")
+(setq py-python-command "/usr/local/bin/python3")
 
 (add-to-list 'interpreter-mode-alist '("python" . python-mode))
 (setq py-python-command-args '("--colors=linux"))
@@ -198,6 +198,12 @@
 (define-key 'help-command "R" 'yari-helm)
 
 (helm-mode 1)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Multiple-cursors (https://github.com/magnars/multiple-cursors.el)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'multiple-cursors)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

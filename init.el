@@ -43,13 +43,15 @@
     yasnippet-bundle))
 
 (defvar misc-packages 
-  '(auto-complete
+  '(ace-jump-buffer
+    ace-jump-mode
+    auto-complete
     auto-dictionary
     browse-kill-ring
     dired+
     dsvn
-    expand-region
     elisp-slime-nav
+    expand-region
     find-file-in-project
     findr
     flymake

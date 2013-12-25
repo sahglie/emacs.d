@@ -5,6 +5,7 @@
 (defvar glie-keys-minor-mode-map (make-keymap) "glie-keys-minor-mode keymap")
 
 ;; POINT MOVEMENT
+(define-key glie-keys-minor-mode-map (kbd "C-\\") 'indent-for-tab-command)
 (define-key glie-keys-minor-mode-map (kbd "C-M-k") 'kill-word)
 (define-key glie-keys-minor-mode-map (kbd "C-j")   'backward-char)
 (define-key glie-keys-minor-mode-map (kbd "M-j")   'backward-word)
@@ -27,8 +28,8 @@
 (define-key glie-keys-minor-mode-map (kbd "H-SPC") 'set-rectangular-region-anchor)
 
 ;; For some reason these bindings causes errors
-;(define-key glie-keys-minor-mode-map (kbd "C-]")   'end-of-defun)
-;(define-key glie-keys-minor-mode-map (kbd "C-[")   'beginning-of-defun)
+(define-key glie-keys-minor-mode-map (kbd "C-M-]")   'end-of-defun)
+(define-key glie-keys-minor-mode-map (kbd "C-M-[")   'beginning-of-defun)
 
 
 ;; WINDOW CONTROL
@@ -63,6 +64,7 @@
 (define-key glie-keys-minor-mode-map (kbd "M-f") 'traverse-deep-rfind)
 (define-key glie-keys-minor-mode-map (kbd "C-x b") 'ido-switch-buffer)
 (define-key glie-keys-minor-mode-map (kbd "C-c ,s") 'rspec-verify-single)
+(define-key glie-keys-minor-mode-map (kbd "C-/") 'hippie-expand)
 
 ;; Ropemacs
 (define-key glie-keys-minor-mode-map (kbd "C-c g") 'rope-goto-definition)
@@ -101,6 +103,7 @@
 (defalias 'bi 'bundle-install)
 (defalias 'ttl 'toggle-truncate-lines)
 (defalias 'tm 'menu-bar-mode)
+(defalias 'sw 'helm-swap-windows)
 
 (add-hook 'minibuffer-setup-hook 'glie-minibuffer-setup-hook)
 (add-hook 'text-mode-hook 'turn-off-auto-fill)

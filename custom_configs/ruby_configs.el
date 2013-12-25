@@ -14,6 +14,7 @@
              (add-to-list 'auto-mode-alist '("\\.ru\\'" . ruby-mode))
              
              (define-key ruby-mode-map (kbd "C-j") 'backward-char)
+             (define-key ruby-mode-map (kbd "C-x C-e") 'ruby-send-region)
              (define-key ruby-mode-map (kbd "M-m")   'recenter)
              ;; (define-key ruby-mode-map (kbd "C-m") 'recenter)
              
