@@ -95,6 +95,7 @@
 ;; (global-set-key (kbd "C-c si") 'snippet-insert)
 
 ;; Random Aliases
+(defalias 'plp 'package-list-packages)
 (defalias 'gs 'magit-status)
 (defalias 'dw 'downcase-word)
 (defalias 'uw 'upcase-word)

@@ -78,6 +78,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Flyspell
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; make sure to install ispell: `brew install ispell'
 (autoload 'flyspell-mode "flyspell" "On-the-fly spelling checker." t)
 
 
@@ -86,19 +87,19 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; NOTE: don't change the order of these declarations or ipython wont
 ;; work correctly
-(setq py-shell-name "ipython3")
-(setq py-load-pymacs-p nil)
+;;(setq py-shell-name "ipython3")
+;;(setq py-load-pymacs-p nil)
 
-(require 'python-mode)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(autoload 'python-mode "python-mode" "Python Mode." t)
-;;(setq ipython-command "~/.pythonbrew/pythons/Python-3.2.3/bin/ipython3")
-(setq py-python-command "/usr/local/bin/python3")
+;;(require 'python-mode)
+;;(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+;;(autoload 'python-mode "python-mode" "Python Mode." t)
+;;(setq py-python-command "/usr/local/bin/python3")
+;;(add-to-list 'interpreter-mode-alist '("python" . python-mode))
+;;(setq py-python-command-args '("--colors=linux"))
+;;(require 'ipython)
 
-(add-to-list 'interpreter-mode-alist '("python" . python-mode))
-(setq py-python-command-args '("--colors=linux"))
-(require 'ipython)
 
+; (setq py-python-command "/usr/local/bin/python3")
 ; (setenv "PYMACS_PYTHON" "~/.pythonbrew/pythons/Python-2.7.2/bin/python")
 ; (autoload 'pymacs-apply "pymacs")
 ; (autoload 'pymacs-call "pymacs")
@@ -178,11 +179,11 @@
 (ac-config-default)
 (setq ac-auto-start 2)
 (setq ac-ignore-case nil)
+(define-key ac-completing-map "\C-n" 'ac-next)
+(define-key ac-completing-map "\C-p" 'ac-previous)
 ;;(add-to-list 'ac-sources 'ac-sources-yasnippet)
 ;;(define-key ac-menu-map "\C-n" 'ac-next)
 ;;(define-key ac-menu-map "\C-p" 'ac-previous)
-(define-key ac-completing-map "\C-n" 'ac-next)
-(define-key ac-completing-map "\C-p" 'ac-previous)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -198,12 +199,6 @@
 (define-key 'help-command "R" 'yari-helm)
 
 (helm-mode 1)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; Multiple-cursors (https://github.com/magnars/multiple-cursors.el)
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'multiple-cursors)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

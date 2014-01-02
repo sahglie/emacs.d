@@ -92,6 +92,7 @@
    (package-install p)))
 
 (load-file "~/.emacs.d/default.el")
+(mapc 'load (directory-files "~/.emacs.d/custom_configs/" 't "^[^#].*el$"))
 
 
 
