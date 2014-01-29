@@ -5,6 +5,23 @@
 (menu-bar-mode)
 (set-face-attribute 'default nil :height 110)
 
+;; Enable copy and pasting from clipboard
+(setq x-select-enable-clipboard t)
+
+(set-face-attribute  'mode-line
+                 nil 
+                 :foreground "black"
+                 :background "green" 
+                 :box '(:line-width 1 :style released-button)
+)
+
+(set-face-attribute  'mode-line-inactive
+                 nil 
+                 :foreground "black"
+                 :background "light gray"
+                 :box '(:line-width 1 :style released-button)
+)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; For IRC
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -211,3 +228,28 @@
 ; Bundler w/rails
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'bundler)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Powerline
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (require 'powerline)
+;; (require 'cl)
+
+;; (setq powerline-arrow-shape 'arrow)   ;; the default
+;;(setq powerline-arrow-shape 'curve)   ;; give your mode-line curves
+;;(setq powerline-arrow-shape 'arrow14)
+;; best for small fonts
+
+;; ;; You can change the mode-line color using the standard method:
+
+;; (custom-set-faces
+;;  '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
+;;  '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
+
+;; ;;Additionally, you can modify directly in powerline.el:
+
+;; (setq powerline-color1 "grey22")
+;; (setq powerline-color2 "grey40")
+
+
