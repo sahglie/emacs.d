@@ -1,8 +1,8 @@
 (require 'package)
-;; (add-to-list 'package-archives
-;;              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -50,6 +50,7 @@
     auto-dictionary
     browse-kill-ring
     dired+
+    dired-x
     dsvn
     elisp-slime-nav
     expand-region
@@ -62,7 +63,6 @@
     fuzzy
     fuzzy-match
     handlebars-mode
-    helm
     htmlize
     httpcode
     idle-highlight-mode
@@ -110,7 +110,7 @@
  '(ido-auto-merge-work-directories-length nil)
  '(ido-create-new-buffer (quote always))
  '(ido-enable-flex-matching t)
- '(ido-max-prospects 20)
+ '(ido-max-prospects 30)
  '(ido-mode (quote both) nil (ido))
  '(line-number-mode nil)
  '(rspec-use-bundler-when-possible nil)

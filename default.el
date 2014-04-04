@@ -3,7 +3,7 @@
 (load-theme 'blackboard t)
 (blink-cursor-mode t)
 (menu-bar-mode)
-(set-face-attribute 'default nil :height 110)
+(set-face-attribute 'default nil :height 120)
 
 ;; Enable copy and pasting from clipboard
 (setq x-select-enable-clipboard t)
@@ -21,6 +21,21 @@
                  :background "light gray"
                  :box '(:line-width 1 :style released-button)
 )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; For projectile
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'grizzl)
+(projectile-global-mode)
+(setq projectile-enable-caching t)
+(setq projectile-completion-system 'grizzl)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; For dired-x
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'dired-x)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; For IRC
@@ -204,21 +219,6 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; helm
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(require 'helm-config)
-
-(defun yari-helm (&optional rehash)
-  (interactive (list current-prefix-arg))
-  (when current-prefix-arg (yari-ruby-obarray rehash))
-  (helm 'yari-anything-source-ri-pages (yari-symbol-at-point)))
-
-(define-key 'help-command "R" 'yari-helm)
-
-(helm-mode 1)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Multiple-cursors (https://github.com/magnars/multiple-cursors.el)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'multiple-cursors)
@@ -252,4 +252,27 @@
 ;; (setq powerline-color1 "grey22")
 ;; (setq powerline-color2 "grey40")
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Dash At Point
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(autoload 'dash-at-point "dash-at-point"
+  "Search the word at point with Dash." t nil)
+;;   (global-set-key "\C-cd" 'dash-at-point)
+;;
+;; Run `dash-at-point' to search the word at point, then Dash is
+;; launched and search the word. To edit the search term first,
+;; use C-u to set the prefix argument for `dash-at-point'.
+;;
+;; Dash queries can be narrowed down with a docset prefix.  You can
+;; customize the relations between docsets and major modes.
+;;
+;;   (add-to-list 'dash-at-point-mode-alist '(perl-mode . "perl"))
+;;
+;; Additionally, the buffer-local variable `dash-at-point-docset' can
+;; be set in a specific mode hook (or file/directory local variables)
+;; to programmatically override the guessed docset.  For example:
+;;
+;;   (add-hook 'rinari-minor-mode-hook
+;;             (lambda () (setq dash-at-point-docset "rails")))
 

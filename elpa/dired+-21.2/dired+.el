@@ -1,4 +1,4 @@
-;;; dired+.el --- Extensions to Dired.
+;; dired+.el --- Extensions to Dired.
 ;;
 ;; Filename: dired+.el
 ;; Description: Extensions to Dired.

@@ -1,0 +1,1 @@
+("~/Development/github_projects/course-001/" "~/Development/sns_code/gitolite-admin/" "~/.emacs.d/")

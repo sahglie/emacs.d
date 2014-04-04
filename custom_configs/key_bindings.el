@@ -34,8 +34,8 @@
 
 ;; WINDOW CONTROL
 (define-key glie-keys-minor-mode-map (kbd "C-1") 'delete-window)
-(define-key glie-keys-minor-mode-map (kbd "C-2") 'split-window-horizontally)
-(define-key glie-keys-minor-mode-map (kbd "C-3") 'split-window-vertically)
+(define-key glie-keys-minor-mode-map (kbd "C-2") 'split-window-vertically)
+(define-key glie-keys-minor-mode-map (kbd "C-3") 'split-window-horizontally)
 (define-key glie-keys-minor-mode-map (kbd "C-o") 'other-window)
 
 (define-key glie-keys-minor-mode-map (kbd "C-S-l") 'windmove-right)
@@ -60,9 +60,14 @@
 (define-key glie-keys-minor-mode-map (kbd "C-x sh") 'shell-here)
 (define-key glie-keys-minor-mode-map (kbd "C-x ln") 'linum-mode)
 (define-key glie-keys-minor-mode-map (kbd "C-x ws") 'global-whitespace-newline-mode)
+
+;;(define-key glie-keys-minor-mode-map (kbd "C-S-p") 'projectile-find-file)
+;;(define-key glie-keys-minor-mode-map (kbd "C-S-b") 'projectile-switch-to-buffer)
+
 (define-key glie-keys-minor-mode-map (kbd "C-S-f") 'ffip)
 (define-key glie-keys-minor-mode-map (kbd "M-f") 'traverse-deep-rfind)
 (define-key glie-keys-minor-mode-map (kbd "C-x b") 'ido-switch-buffer)
+(define-key glie-keys-minor-mode-map (kbd "C-x j") 'ido-switch-buffer)
 (define-key glie-keys-minor-mode-map (kbd "C-c ,s") 'rspec-verify-single)
 (define-key glie-keys-minor-mode-map (kbd "C-/") 'hippie-expand)
 
@@ -104,7 +109,7 @@
 (defalias 'bi 'bundle-install)
 (defalias 'ttl 'toggle-truncate-lines)
 (defalias 'tm 'menu-bar-mode)
-(defalias 'sw 'helm-swap-windows)
+;; (defalias 'sw 'helm-swap-windows)
 
 (add-hook 'minibuffer-setup-hook 'glie-minibuffer-setup-hook)
 (add-hook 'text-mode-hook 'turn-off-auto-fill)

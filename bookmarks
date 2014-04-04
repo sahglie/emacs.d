@@ -12,6 +12,11 @@
  (front-context-string . "ruby_coa\n  drwxr")
  (rear-context-string . "72 21 Okt  2009 ")
  (position . 248))
+("sns_code"
+ (filename . "~/Development/sns_code/")
+ (front-context-string . "ruby_coa\n  drwxr")
+ (rear-context-string . "72 21 Okt  2009 ")
+ (position . 248))
 ("github_projects"
  (filename . "~/Development/github_projects/")
  (front-context-string . "SICPExerciseSolu")
