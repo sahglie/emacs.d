@@ -2,6 +2,15 @@
 ;; KEY MAPPINGS                                                                ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (newline)
+  (yank)
+)
+
 (defvar glie-keys-minor-mode-map (make-keymap) "glie-keys-minor-mode keymap")
 
 ;; POINT MOVEMENT
@@ -44,6 +53,7 @@
 (define-key glie-keys-minor-mode-map (kbd "C-S-n") 'windmove-down)
 
 ;; General aliases
+(define-key glie-keys-minor-mode-map (kbd "C-S-k") 'duplicate-line)
 (define-key glie-keys-minor-mode-map (kbd "C-x g") 'goto-line)
 (define-key glie-keys-minor-mode-map (kbd "M-5") 'query-replace-regexp)
 (define-key glie-keys-minor-mode-map (kbd "C-S-w") 'er/expand-region)
@@ -116,3 +126,5 @@
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 (setq visible-bell t)
 (setq-default fill-column 9000)
+
+

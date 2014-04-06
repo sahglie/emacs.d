@@ -1,8 +1,8 @@
 ;; ruby-electric-mode Always gets called after ruby-mode is loaded so
 ;; configs go here instead of ruby-mode-hook
-;;
+
 ;; (add-hook 'ruby-mode-hook '(lambda ()))
-;;
+
 (add-hook 'ruby-electric-mode-hook
           '(lambda ()
              (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
