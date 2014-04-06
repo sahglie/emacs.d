@@ -1,7 +1,8 @@
 (require 'package)
 
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 
 (package-initialize)
 
@@ -31,11 +32,11 @@
     inf-ruby
     less
     less-css-mode
-    rinari
     rspec-mode
     ruby-compilation
-    enh-ruby-mode
     ruby-mode
+    ruby-electric-mode
+    ruby-end-mode
     rvm
     sass-mode
     yaml-mode
@@ -56,6 +57,7 @@
     expand-region
     find-file-in-project
     findr
+    flx-ido
     flymake
     flymake-haml
     flymake-ruby
@@ -67,6 +69,7 @@
     httpcode
     idle-highlight-mode
     ido-ubiquitous
+    ido-vertical-mode
     inflections
     jump
     magit
@@ -76,6 +79,8 @@
     paredit
     popup
     project
+    projectile
+    projectile-rails
     scpaste
     scratch
     shell-here
@@ -109,18 +114,24 @@
  '(fci-rule-color "#073642")
  '(ido-auto-merge-work-directories-length nil)
  '(ido-create-new-buffer (quote always))
+ '(ido-decorations (\` ("
+-> " "" "
+   " "
+   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
  '(ido-enable-flex-matching t)
  '(ido-max-prospects 30)
  '(ido-mode (quote both) nil (ido))
  '(line-number-mode nil)
  '(rspec-use-bundler-when-possible nil)
  '(safe-local-variable-values (quote ((ffip-full-paths . 1) (ruby-compilation-executable . "ruby") (ruby-compilation-executable . "ruby1.8") (ruby-compilation-executable . "ruby1.9") (ruby-compilation-executable . "rbx") (ruby-compilation-executable . "jruby") (whitespace-line-column . 80) (lexical-binding . t)))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(ido-first-match ((t (:foreground "DarkOrange1" :weight bold)))))
+
 (put 'dired-find-alternate-file 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

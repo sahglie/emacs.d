@@ -1,1 +1,1 @@
-("~/Development/github_projects/course-001/" "~/Development/sns_code/gitolite-admin/" "~/.emacs.d/")
+("~/.emacs.d/" "~/Development/sns_code/offsite-rails4/" "~/Development/github_projects/course-001/" "~/Development/sns_code/scan_matron/" "~/Development/sns_code/gitolite-admin/")
