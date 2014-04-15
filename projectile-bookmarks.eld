@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/Development/sns_code/offsite-rails4/" "~/Development/github_projects/course-001/" "~/Development/sns_code/scan_matron/" "~/Development/sns_code/gitolite-admin/")
+("~/Development/sns_code/infohub/" "~/Development/sns_code/scan_matron/" "/usr/local/" "~/.emacs.d/" "~/Development/sns_code/gitolite-admin/" "~/Development/sns_code/by2/" "~/Development/github_projects/rcat/" "~/Development/github_projects/course-001/" "~/Development/sns_code/offsite-rails4/")

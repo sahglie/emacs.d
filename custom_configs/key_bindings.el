@@ -112,6 +112,7 @@
 ;; Random Aliases
 (defalias 'plp 'package-list-packages)
 (defalias 'gs 'magit-status)
+(defalias 'gpl 'magit-key-mode-popup-pulling)
 (defalias 'dw 'downcase-word)
 (defalias 'uw 'upcase-word)
 (defalias 'rb 'rename-buffer)

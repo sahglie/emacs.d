@@ -1,7 +1,8 @@
 ;; ruby-electric-mode Always gets called after ruby-mode is loaded so
 ;; configs go here instead of ruby-mode-hook
 
-;; (add-hook 'ruby-mode-hook '(lambda ()))
+(add-hook 'ruby-mode-hook '(lambda ())
+          (linum-mode t))
 
 (add-hook 'ruby-electric-mode-hook
           '(lambda ()
