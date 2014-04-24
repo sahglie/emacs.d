@@ -1,27 +1,27 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/vendor/color-themes")
 
-(load-theme 'blackboard t)
+(if window-system
+  (load-theme 'blackboard t)
+  (menu-bar-mode)
+
+
+  ;; Enable copy and pasting from clipboard
+  (set-face-attribute  'mode-line
+                       nil 
+                       :foreground "black"
+                       :background "green" 
+                       :box '(:line-width 1 :style released-button))
+
+  (set-face-attribute  'mode-line-inactive
+                       nil 
+                       :foreground "black"
+                       :background "light gray"
+                       :box '(:line-width 1 :style released-button)))
+
 (blink-cursor-mode t)
-(menu-bar-mode)
+(setq x-select-enable-clipboard t)
 (set-face-attribute 'default nil :height 120)
 
-;; Enable copy and pasting from clipboard
-(setq x-select-enable-clipboard t)
-
-
-(set-face-attribute  'mode-line
-                 nil 
-                 :foreground "black"
-                 :background "green" 
-                 :box '(:line-width 1 :style released-button)
-)
-
-(set-face-attribute  'mode-line-inactive
-                 nil 
-                 :foreground "black"
-                 :background "light gray"
-                 :box '(:line-width 1 :style released-button)
-)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; For dired-x

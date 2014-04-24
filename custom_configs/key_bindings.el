@@ -75,6 +75,7 @@
 ;;(define-key glie-keys-minor-mode-map (kbd "C-S-b") 'projectile-switch-to-buffer)
 
 (define-key glie-keys-minor-mode-map (kbd "C-S-f") 'ffip)
+(define-key glie-keys-minor-mode-map (kbd "C-x fp") 'ffip)
 (define-key glie-keys-minor-mode-map (kbd "M-f") 'traverse-deep-rfind)
 (define-key glie-keys-minor-mode-map (kbd "C-x b") 'ido-switch-buffer)
 (define-key glie-keys-minor-mode-map (kbd "C-x j") 'ido-switch-buffer)
@@ -82,7 +83,7 @@
 (define-key glie-keys-minor-mode-map (kbd "C-/") 'hippie-expand)
 
 ;; Ropemacs
-(define-key glie-keys-minor-mode-map (kbd "C-c g") 'rope-goto-definition)
+;; (define-key glie-keys-minor-mode-map (kbd "C-c g") 'rope-goto-definition)
 
 
 (define-minor-mode glie-keys-minor-mode
@@ -111,6 +112,7 @@
 
 ;; Random Aliases
 (defalias 'plp 'package-list-packages)
+(defalias 'do 'dired-omit-mode)
 (defalias 'gs 'magit-status)
 (defalias 'gpl 'magit-key-mode-popup-pulling)
 (defalias 'dw 'downcase-word)
