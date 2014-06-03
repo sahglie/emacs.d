@@ -23,6 +23,7 @@
 (define-key glie-keys-minor-mode-map (kbd "M-p")   'scroll-down)
 (define-key glie-keys-minor-mode-map (kbd "M-n")   'scroll-up)
 (define-key glie-keys-minor-mode-map (kbd "M-m")   'recenter)
+(define-key glie-keys-minor-mode-map (kbd "C-S-m")   'recenter)
 (define-key glie-keys-minor-mode-map (kbd "M-]")   'end-of-buffer)
 (define-key glie-keys-minor-mode-map (kbd "M-[")   'beginning-of-buffer)
 (define-key glie-keys-minor-mode-map (kbd "C-M-j") 'backward-sexp)
